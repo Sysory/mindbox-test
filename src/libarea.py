@@ -2,13 +2,13 @@ from math import pi
 # from abc import ABC, abstractmethod
 
 class Figure:
+  isValid = False
 # class Figure(ABC):
   # @abstractmethod
   def getSquare() -> float:
     return None
 
 class Triangle(Figure):
-  isValid = False
 
   def __init__(self, a : float, b : float, c : float):
     try: 
@@ -38,6 +38,7 @@ class Circle(Figure):
     try:
       if (radius > 0):
         self.radius = radius
+        self.isValid = True
       else:
         raise Exception
     except:
@@ -46,8 +47,3 @@ class Circle(Figure):
   def getSquare(self):
     return pi * self.radius * self.radius
 
-def main():
-  pass
-
-if __name__ == "__main__":
-  main()
