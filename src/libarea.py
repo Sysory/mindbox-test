@@ -24,7 +24,7 @@ class Triangle(Figure):
     except:
       self.sides = (0, 0, 0)
     else:
-      if (self.sides[2]**2 == self.sides[0]**2 + self.sides[1]**2):
+      if (abs(self.sides[2]**2 - self.sides[0]**2 - self.sides[1]**2) < 1e-7):
         self.isRect = True
 
   def getArea(self):
